@@ -5,16 +5,12 @@ app = FastAPI()
 
 class Item(BaseModel):
     name: str
-   
     price: float
     
 @app.post("/items/")
 def create_item(item: Item):
-    return {"item": item}
+     return item
 
-@app.get("/")
-def read_root():
-    return {"message": "Hello, World!"}
 
 @app.get("/items/{item_id}")
 def read_item(item_id: int):
@@ -27,8 +23,8 @@ def read_item_details(item_id: int):
 
 
 # Blog endpoint with a query parameter
-@app.get("/blog")
-def read_blog(limit)
+# @app.get("/blog")
+# def read_blog(limit)
 
 
 
