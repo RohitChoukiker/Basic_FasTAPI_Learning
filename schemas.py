@@ -12,11 +12,9 @@ class Blog(BlogBase):
         
         
 class ShowBlog(BlogBase):
-    title: str
-    body: str
     id: int
-    creator: 'ShowUser'  # Assuming you want to include the creator's details
-    creator_id: int  # Assuming you want to include the creator's ID
+    user_id: int
+    creator: Optional['ShowUser'] = None  # Optional creator details
 
     class Config():
         orm_mode = True     
