@@ -9,3 +9,38 @@ class BlogBase(BaseModel):
 class Blog(BlogBase):
     class Config():
         orm_mode = True
+        
+        
+class ShowBlog(BlogBase):
+    title: str
+    body: str
+    id: int
+    creator: 'ShowUser'  # Assuming you want to include the creator's details
+    creator_id: int  # Assuming you want to include the creator's ID
+
+    class Config():
+        orm_mode = True     
+     
+     
+     
+     
+        
+class UserBase(BaseModel):
+    username: str
+    email: str
+    password: str   
+      
+    
+class User(UserBase):
+    
+    
+    class Config():
+        orm_mode = True    
+        
+        
+class ShowUser(BaseModel):
+    username: str
+    email: str     
+    
+    class Config():
+        orm_mode = True   
